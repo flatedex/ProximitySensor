@@ -31,17 +31,17 @@ public class AllSensors extends AppCompatActivity {
             for (Sensor sensor : deviceSensors) {
                 counter++;
                 listSensorType.add(counter + " " + sensor.getName()+"\n"+
-                        "Индекс типа: " + sensor.getType() + "\n" +
-                        "Производитель: " + sensor.getVendor() + "\n" +
-                        "Версия: " + sensor.getVersion() + "\n" +
-                        "Мощность: " + sensor.getPower() + " мВт\n" +
-                        "Задержка: [" + sensor.getMinDelay() + "," + sensor.getMaxDelay() + "] мкс\n" +
-                        "Макс. значение: " + sensor.getMaximumRange() + "\n" +
-                        "Точность: " + sensor.getResolution() + "\n"
+                        getString(R.string.index)+ " " + sensor.getType() + "\n" +
+                        getString(R.string.manufacturer)+ " " + sensor.getVendor() + "\n" +
+                        getString(R.string.version)+ " " + sensor.getVersion() + "\n" +
+                        getString(R.string.power)+ " " + sensor.getPower() + getString(R.string.mvt) + "\n" +
+                        getString(R.string.latency) + sensor.getMinDelay() + "," + sensor.getMaxDelay() + getString(R.string.mks) + "\n" +
+                        getString(R.string.maxValue)+ " " + sensor.getMaximumRange() + "\n" +
+                        getString(R.string.accuracy)+ " " + sensor.getResolution() + "\n"
                 );
             }
         } else {
-            Toast.makeText(this, "На устройстве нет датчиков", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.noSensors), Toast.LENGTH_SHORT).show();
         }
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listSensorType);
         ListView listView = (ListView)findViewById(R.id.listView);

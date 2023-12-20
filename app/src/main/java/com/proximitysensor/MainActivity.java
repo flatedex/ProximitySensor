@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         proximitySensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
 
         if(proximitySensor == null){
-            Toast.makeText(this, "No proximity sensor found on this device", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.noSensor), Toast.LENGTH_SHORT).show();
         } else {
             sensorManager.registerListener(proximitySensorEventListener, proximitySensor, SensorManager.SENSOR_DELAY_NORMAL);
         }
@@ -56,9 +56,9 @@ public class MainActivity extends AppCompatActivity {
         public void onSensorChanged(SensorEvent event) {
             if(event.sensor.getType() == Sensor.TYPE_PROXIMITY){
                 if(event.values[0] == 0) {
-                    sensorStatus.setText("Близко");
+                    sensorStatus.setText(getString(R.string.near));
                 } else {
-                    sensorStatus.setText("Далеко");
+                    sensorStatus.setText(getString(R.string.far) + " " + event.values[0]);
                 }
             }
         }

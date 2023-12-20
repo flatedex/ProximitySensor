@@ -3,4 +3,17 @@
     <string name="allSensors">Все датчики</string>
     <string name="sensor">Датчик</string>
     <string name="viewAllSensors">Просмотреть все датчики</string>
+    <string name="near">Близко</string>
+    <string name="far">Далеко </string>
+    <string name="index">Индекс типа: </string>
+    <string name="manufacturer">Производитель: </string>
+    <string name="version">Версия: </string>
+    <string name="power">Мощность: </string>
+    <string name="latency">Задержка: [</string>
+    <string name="maxValue">Макс. значение: </string>
+    <string name="accuracy">Точность: </string>
+    <string name="mvt"> мВт</string>
+    <string name="mks">] мкс</string>
+    <string name="noSensors">На устройстве нет датчиков</string>
+    <string name="noSensor">Датчик приближения не найден!</string>
 </resources>
